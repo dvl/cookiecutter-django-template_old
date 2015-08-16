@@ -1,0 +1,87 @@
+web:
+  build: .
+  command: python manage.py runserver 0.0.0.0:8000
+  ports:
+    - "8000:8000"
+  volumes:
+    - .:/usr/src/app
+  links:
+    {% if cookiecutter.use_postgres == 'y' %}- postgres{% endif %}
+    {% if cookiecutter.use_mysql == 'y' %}- mysql{% endif %}
+    {% if cookiecutter.use_elasticsearch == 'y' %}- elasticsearch{% endif %}
+    {% if cookiecutter.use_memcached == 'y' %}- memcached{% endif %}
+  env_file:
+    - .env
+
+{% if cookiecutter.use_celery == 'y' %}
+celery:
+  build: .
+  command: celery -A {{ cookiecutter.repo_name }} worker
+  volumes:
+    - .:/usr/src/app
+  links:
+    {% if cookiecutter.use_postgres == 'y' %}- postgres{% endif %}
+    {% if cookiecutter.use_mysql == 'y' %}- mysql{% endif %}
+    {% if cookiecutter.use_elasticsearch == 'y' %}- elasticsearch{% endif %}
+    {% if cookiecutter.use_memcached == 'y' %}- memcached{% endif %}
+  env_file:
+    - .env
+{% endif %}
+
+{% if cookiecutter.use_celery == 'y' and cookiecutter.use_celery_beat == 'y' %}
+beat:
+  build: .
+  command: celery -A {{ cookiecutter.repo_name }} beat
+  volumes:
+    - .:/usr/src/app
+  links:
+    {% if cookiecutter.use_postgres == 'y' %}- postgres{% endif %}
+    {% if cookiecutter.use_mysql == 'y' %}- mysql{% endif %}
+    {% if cookiecutter.use_elasticsearch == 'y' %}- elasticsearch{% endif %}
+    {% if cookiecutter.use_memcached == 'y' %}- memcached{% endif %}
+  env_file:
+    - .env
+{% endif %}
+
+{% if cookiecutter.use_postgres == 'y' %}
+postgres:
+  image: postgres
+  ports:
+    - "5432:5432"
+{% endif %}
+
+{% if cookiecutter.use_mysql == 'y' %}
+mysql:
+  image: mysql
+  ports:
+    - "3306:3306"
+{% endif %}
+
+{% if cookiecutter.use_elasticsearch == 'y' %}
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - "9200:9200"
+{% endif %}
+
+{% if cookiecutter.use_memcached == 'y' %}
+memcached:
+  image: memcached
+  ports:
+    - "11211:11211"
+{% endif %}
+
+{% if cookiecutter.use_celery == 'y' and cookiecutter.use_celery_with_rabbitmq == 'y' %}
+memcached:
+  image: rabbitmq
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+{% endif %}
+
+{% if cookiecutter.use_celery == 'y' and cookiecutter.use_celery_with_redis == 'y' %}
+memcached:
+  image: redis
+  ports:
+    - "6379:6379"
+{% endif %}

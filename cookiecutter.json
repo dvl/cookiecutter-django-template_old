@@ -1,0 +1,16 @@
+{
+    "project_name": "Project Name",
+    "repo_name": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+    "use_postgres": "y",
+    "use_mysql": "n",
+    "use_compressor": "y",
+    "use_memcached": "y",
+    "use_elasticsearch": "y",
+    "use_celery": "y",
+    "use_celery_with_rabbitmq": "y",
+    "use_celery_with_redis": "n",
+    "use_celery_beat": "n",
+    "use_whitenoise": "y",
+    "use_docker": "y",
+    "use_heroku": "n"
+}
