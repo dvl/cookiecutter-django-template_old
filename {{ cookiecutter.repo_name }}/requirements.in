@@ -13,7 +13,7 @@ django-nose
 djangorestframework
 python-decouple
 
-bcrypt
+{% if cookiecutter.use_bcrypt == 'y' %}bcrypt{% endif %}
 {% if cookiecutter.use_celery == 'y' %}celery{% endif %}
 {% if cookiecutter.use_elasticsearch == 'y' %}elasticsearch{% endif %}
 {% if cookiecutter.use_mysql == 'y' %}mysql-python{% endif %}

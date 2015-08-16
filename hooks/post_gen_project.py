@@ -17,6 +17,7 @@ use_celery_beat = '{{ cookiecutter.use_celery_beat }}' == 'y'
 use_whitenoise = '{{ cookiecutter.use_whitenoise }}' == 'y'
 use_docker = '{{ cookiecutter.use_docker }}' == 'y'
 use_heroku = '{{ cookiecutter.use_heroku }}' == 'y'
+use_bcrypt = '{{ cookiecutter.use_bcrypt }}' == 'y'
 
 if not use_heroku:
     os.remove('.buildpacks')

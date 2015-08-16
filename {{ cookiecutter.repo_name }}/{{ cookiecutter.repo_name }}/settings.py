@@ -167,9 +167,11 @@ LOGOUT_URL = '/auth/logout/'
 
 LOGIN_REDIRECT_URL = '/'
 
+{% if cookiecutter.use_bcrypt == 'y' %}
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
 )
+{% endif %}
 
 {% if cookiecutter.use_memcached == 'y' %}
 # Cache
