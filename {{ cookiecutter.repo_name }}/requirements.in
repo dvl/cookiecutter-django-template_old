@@ -24,7 +24,7 @@ pillow
 
 {% if cookiecutter.use_heroku == 'y' %}waitress{% endif %}
 {% if cookiecutter.use_heroku != 'y' %}uwsgi{% endif %}
-{% if cookiecutter.use_whitenoise == 'y' or cookiecutter.use_heroku %}whitenoise{% endif %}
+{% if cookiecutter.use_whitenoise == 'y' or cookiecutter.use_heroku == 'y' %}whitenoise{% endif %}
 
 coverage
 mock
