@@ -3,6 +3,7 @@
 .env
 .coverage
 
+.sass-cache/
 _build/
 bower_components/
 htmlcov/
