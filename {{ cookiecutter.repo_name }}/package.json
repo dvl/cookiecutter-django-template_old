@@ -1,5 +1,5 @@
 {
-  "name": "{{ cookiecutter.project_name }}",
+  "name": "{{ cookiecutter.repo_name }}",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,9 @@
     "iojs": "3.0.x"
   },
   "dependencies": {
-    "bower": "^1.4.1"
+    "bower": "^1.4.1",
+    "coffee-script": "^1.9.3",
+    "less": "^2.5.1"
   },
   "devDependencies": {},
   "scripts": {
