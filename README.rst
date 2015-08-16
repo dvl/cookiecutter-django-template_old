@@ -13,6 +13,8 @@ Usage
     $ pip-compile
 
     $ pip-sync
+    
+    $ npm install
 
     $ vim .env
     
