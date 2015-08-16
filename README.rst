@@ -118,6 +118,15 @@ Você pode iniciar o projeto com:
 
     $ python manage.py runserver
 
+*****************
+Usando com Docker
+*****************
+
+.. code:: shell
+
+    $ docker-compose build
+    $ docker-compose up
+
 
 .. _pip-tools: https://koed00.github.io/managed-environments-with-piptools/
 .. _12factor: http://12factor.net/
