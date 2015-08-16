@@ -13,3 +13,7 @@ Usage
     $ pip-compile
 
     $ pip-sync
+
+    $ vim .env
+    
+    $ python manage.py runserver
