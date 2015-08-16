@@ -104,6 +104,8 @@ Leia mais sobre o pip-tools_.
 Esse template foi construido com 12factor_ em mente, então edite o arquivo
 que guarda suas variaveis de ambiente e é referenciado no ``settings.py``.
 
+.. code:: shell
+
     $ vim .env
 
 ***
