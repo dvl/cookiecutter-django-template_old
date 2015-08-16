@@ -2,14 +2,18 @@
 Usage
 =====
 
-Install required packages first
+.. code:: shell
 
-$ pip install cookiecutter pip-tools
+    $ pip install cookiecutter pip-tools
 
-$ cookiecutter <insert url here>
+    $ cookiecutter https://github.com/dvl/django-cookiecutter-template
 
-$ cd project_name
+    $ cd <project_name>
 
-$ pip-compile
+    $ pip-compile
 
-$ pip-sync
+    $ pip-sync
+
+    $ vim .env
+    
+    $ python manage.py runserver
