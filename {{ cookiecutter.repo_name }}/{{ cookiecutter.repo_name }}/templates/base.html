@@ -1,5 +1,5 @@
+{% if cookiecutter.use_compressor == 'y' %}{% raw %}{% load compress %}{% endraw %}{% endif %}
 {% raw %}
-{% load compress %}
 {% load staticfiles %}
 
 <!DOCTYPE html>
@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
   {% endcompress %}
+  {% endraw %}
 
-  {# you should choose only one #}
-
+  {% if cookiecutter.use_compressor == 'y' %}{% raw %}
   {% compress css %}
     <link rel="stylesheet" type="text/less" href="{% static 'less/site.less' %}">
     <link rel="stylesheet" type="text/less" href="{% static 'less/print.less' %}">
@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/x-sass" href="{% static 'sass/site.sass' %}">
     <link rel="stylesheet" type="text/x-sass" href="{% static 'sass/print.sass' %}">
   {% endcompress %}
+  {% endraw %}{% endif %}
 
   {% block extra_css %}{% endblock %}
 </head>
@@ -136,9 +137,13 @@
     <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
   {% endcompress %}
 
+  {% endraw %}
+
+  {% if cookiecutter.use_compressor == 'y' %}{% raw %}
   {% compress js %}
     <script type="text/coffeescript" src="{% static 'coffee/main.coffee' %}"></script>
   {% endcompress %}
+  {% endraw %}{% endif %}
 
   {% block extra_js %}{% endblock %}
 </body>
