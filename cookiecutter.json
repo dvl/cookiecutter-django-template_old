@@ -12,5 +12,6 @@
     "use_celery_beat": "n",
     "use_whitenoise": "y",
     "use_docker": "y",
-    "use_heroku": "n"
+    "use_heroku": "n",
+    "use_bcrypt": "n"
 }
