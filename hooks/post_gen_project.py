@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import sys
 
 repo_name = '{{ cookiecutter.repo_name }}'
 
@@ -31,3 +32,6 @@ if not use_celery:
     os.remove(os.path.join(repo_name, 'celery.py'))
 
 shutil.copyfile('.env-example', '.env')
+
+if sys.platform in ['linux', 'linux2', 'darwin']:
+    os.chmod('manage.py', 0744)
