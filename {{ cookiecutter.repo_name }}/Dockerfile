@@ -13,9 +13,11 @@ RUN apt-get update && apt-get install -y \
                 libssl-dev \
                 mysql-client libmysqlclient-dev \
                 postgresql-client libpq-dev \
-                python-dev \
+                python-dev python-pip \
                 zlib1g-dev \
         --no-install-recommends && rm -rf /var/lib/apt/lists/*
+
+RUN pip install -U pip
 
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
