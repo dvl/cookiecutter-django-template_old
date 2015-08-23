@@ -5,10 +5,12 @@
 
 .sass-cache/
 _build/
+bower_components/
 htmlcov/
 logs/
 media-root/
 media/
+node_modules/
 static-root/
 
 npm-debug.log
