@@ -1,5 +1,4 @@
-FROM python:2
-FROM iojs:3
+FROM nodesource/jessie:0.12.7
 
 MAINTAINER André Luiz <contato@xdvl.info>
 
@@ -7,6 +6,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 RUN apt-get update && apt-get install -y \
+                build-essential \
                 gcc \
                 libffi-dev \
                 libfreetype6-dev libjpeg-dev \
@@ -22,7 +22,7 @@ RUN pip install -U pip
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY package.json /usr/src/app/
+COPY package.json bower.json /usr/src/app/
 RUN npm install
 
 COPY . /usr/src/app
