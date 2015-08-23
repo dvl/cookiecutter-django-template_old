@@ -30,4 +30,6 @@ ENV PATH node_modules/.bin/:$PATH
 COPY . /usr/src/app
 
 RUN useradd -u 1000 -m -s /bin/bash app
+RUN chown -R app:app .
+
 USER app
