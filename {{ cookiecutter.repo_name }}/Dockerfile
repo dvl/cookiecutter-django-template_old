@@ -22,12 +22,7 @@ RUN pip install -U pip
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 
-# COPY package.json bower.json /usr/src/app/
-# RUN npm install
-
-ENV PATH node_modules/.bin/:$PATH
-
-COPY . /usr/src/app
+ENV PATH node_modules/.bin:$PATH
 
 RUN useradd -u 1000 -m -s /bin/bash app
 RUN chown -R app:app .
