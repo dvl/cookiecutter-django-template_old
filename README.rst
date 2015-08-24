@@ -56,16 +56,13 @@ Dependencias
 
 Esse projeto faz uso das mais atuais tendencias para facilitar o
 desenvolvimento front-end do projeto, como ``bower``, ``sass``, ``gulp``, etc...
-portanto será necessária a instalação do ``node.js`` com ``npm`` e ``Ruby`` com
-``gem`` e ``bundle``.
+portanto será necessária a instalação do ``node.js`` com ``npm``.
 
 Caso você já tenha essas depedencias instaladas basta digitar:
 
 .. code:: shell
 
     $ npm install
-
-    $ bundle install
 
 ****************
 requirements.txt
@@ -122,11 +119,20 @@ Você pode iniciar o projeto com:
 Usando com Docker
 *****************
 
+Setup Inicial
+-------------
+
 .. code:: shell
 
     $ docker-compose build
-    $ docker-compose up
+    $ docker-compose run web npm install && bower install
+    
+Iniciando Servidores
+--------------------
 
+.. code:: shell
+
+    $ docker-compose up
 
 .. _pip-tools: https://koed00.github.io/managed-environments-with-piptools/
 .. _12factor: http://12factor.net/
