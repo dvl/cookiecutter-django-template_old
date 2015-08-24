@@ -125,7 +125,7 @@ Setup Inicial
 .. code:: shell
 
     $ docker-compose build
-    $ docker-compose run web npm install && bower install
+    $ docker-compose run web npm install 
     
 Iniciando Servidores
 --------------------
