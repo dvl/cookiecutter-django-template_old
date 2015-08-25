@@ -3,7 +3,7 @@ serve:
 
 test:
 	@export REUSE_DB=1
-	@coverage run --source={{ project_name }}/ --omit=*/wsgi.py manage.py test
+	@coverage run --source={{ cookiecutter.project_name }}/ --omit=*/wsgi.py manage.py test
 	@coverage report
 	@coverage html
 
