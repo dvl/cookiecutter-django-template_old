@@ -54,7 +54,14 @@ postgres:
 mysql:
   image: mysql
   ports:
-    - "3306:3306"
+    - "3307:3306"
+  volumes:
+    - ./mysql-data:/var/lib/mysql
+  environment:
+    - MYSQL_DATABASE={{ cookiecutter.repo_name }}
+    - MYSQL_USER={{ cookiecutter.repo_name }}
+    - MYSQL_PASSWORD={{ cookiecutter.repo_name }}
+    - MYSQL_ROOT_PASSWORD=my-root-password
 {% endif %}
 
 {% if cookiecutter.use_elasticsearch == 'y' %}
