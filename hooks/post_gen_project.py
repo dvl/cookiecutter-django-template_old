@@ -30,6 +30,9 @@ if not use_docker:
 
 if not use_celery:
     os.remove(os.path.join(repo_name, 'celery.py'))
+    
+if not use_elasticsearch:
+    shutil.rmtree('templates/search')
 
 shutil.copyfile('.env-example', '.env')
 
