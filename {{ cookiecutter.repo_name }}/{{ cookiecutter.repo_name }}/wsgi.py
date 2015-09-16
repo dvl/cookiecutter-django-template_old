@@ -17,3 +17,14 @@ from django.core.wsgi import get_wsgi_application
 
 application = get_wsgi_application()
 {% if cookiecutter.use_whitenoise == 'y' or cookiecutter.use_heroku == 'y' %}application = DjangoWhiteNoise(application){% endif %}
+
+{% if cookiecutter.use_newrelic == 'y'}
+import newrelic
+from decouple import config
+
+newrelic_ini = config('NEW_RELIC_CONFIG_FILE', default='newrelic.ini')
+newrelic_license_key = config('NEW_RELIC_LICENSE_KEY')
+
+newrelic.agent.initialize(newrelic_ini)
+application = newrelic.agent.wsgi_application()(application)
+{% endif %}

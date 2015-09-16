@@ -19,6 +19,7 @@ use_whitenoise = '{{ cookiecutter.use_whitenoise }}' == 'y'
 use_docker = '{{ cookiecutter.use_docker }}' == 'y'
 use_heroku = '{{ cookiecutter.use_heroku }}' == 'y'
 use_bcrypt = '{{ cookiecutter.use_bcrypt }}' == 'y'
+use_newrelic = '{{ cookiecutter.use_newrelic }}' == 'y'
 
 if not use_heroku:
     os.remove('.buildpacks')
@@ -27,6 +28,9 @@ if not use_heroku:
 if not use_docker:
     os.remove('Dockerfile')
     os.remove('docker-compose.yml')
+
+if not use_newrelic:
+    os.remove('newrelic.ini')
 
 if not use_celery:
     os.remove(os.path.join(repo_name, 'celery.py'))
