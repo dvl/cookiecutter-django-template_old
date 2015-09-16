@@ -22,6 +22,7 @@ pillow
 {% if cookiecutter.use_postgres == 'y' %}psycopg2{% endif %}
 {% if cookiecutter.use_memcached == 'y' %}python-memcached{% endif %}
 
+{% if cookiecutter.use_newrelic == 'y' %}newrelic{% endif %}
 {% if cookiecutter.use_heroku == 'y' %}waitress{% endif %}
 {% if cookiecutter.use_heroku != 'y' %}uwsgi{% endif %}
 {% if cookiecutter.use_whitenoise == 'y' or cookiecutter.use_heroku == 'y' %}whitenoise{% endif %}

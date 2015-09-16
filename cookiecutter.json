@@ -1,6 +1,7 @@
 {
     "project_name": "Project Name",
     "repo_name": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
+    "secret_key": "123mudar",
     "use_postgres": "y",
     "use_mysql": "n",
     "use_compressor": "y",
@@ -13,5 +14,6 @@
     "use_whitenoise": "y",
     "use_docker": "y",
     "use_heroku": "n",
-    "use_bcrypt": "n"
+    "use_bcrypt": "n",
+    "use_newrelic" "y"
 }
