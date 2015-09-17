@@ -58,7 +58,7 @@ INSTALLED_APPS = (
     'rest_framework.authtoken',
     # project
     '{{ cookiecutter.repo_name }}.accounts',
-    '{{ cookiecutter.repo_name }}.core',
+    '{{ cookiecutter.repo_name }}.base',
 )
 
 MIDDLEWARE_CLASSES = (
