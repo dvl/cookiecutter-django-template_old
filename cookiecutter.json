@@ -15,5 +15,5 @@
     "use_docker": "y",
     "use_heroku": "n",
     "use_bcrypt": "n",
-    "use_newrelic" "y"
+    "use_newrelic": "y"
 }
