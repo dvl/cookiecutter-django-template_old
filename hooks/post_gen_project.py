@@ -1,8 +1,16 @@
 # -*- coding: utf-8 -*-
 
+import fileinput
 import os
 import shutil
 import sys
+
+for line in fileinput.input(".env-example", inplace=True):
+    if line.startswith('SECRET_KEY='):
+        print("SECRET_KEY={}".format(os.urandom(24).encode('hex')))
+    else:
+        print(line.replace('\n', ''))
+
 
 repo_name = '{{ cookiecutter.repo_name }}'
 
