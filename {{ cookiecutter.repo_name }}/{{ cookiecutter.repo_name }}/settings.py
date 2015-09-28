@@ -44,7 +44,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 3rd
-    {% if cookiecutter.compressor == 'y' %}'compressor',{% endif %}
+    {% if cookiecutter.use_compressor == 'y' %}'compressor',{% endif %}
     'crispy_forms',
     'debug_toolbar',
     'django_extensions',
