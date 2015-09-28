@@ -135,7 +135,7 @@ STATICFILES_FINDERS = (
 )
 
 COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'sass --scss --load-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),
+    ('text/x-scss', 'node-sass --scss --load-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),
 )
 
 COMPRESS_ENABLED = config('COMPRESS_ENABLED', cast=bool, default=False)
