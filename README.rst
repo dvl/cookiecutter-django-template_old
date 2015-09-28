@@ -64,36 +64,6 @@ Caso você já tenha essas depedencias instaladas basta digitar:
 
     $ npm install
 
-****************
-requirements.txt
-****************
-
-Para garantirmos que sempre vamos ter a ultima versão das dependencias usadas
-no nosso requirements usamos o ``pip-tools`` nesse projeto para instala-lo
-faça:
-
-.. code:: shell
-
-    $ pip install pip-tools
-
-Nosso arquivo ``requirements.txt`` será gerado com base no ``requirements.in``
-para isso basta digitar:
-
-.. code:: shell
-
-     $ pip-compile
-
-Agora você pode instalar normalmente como você já está acostumado ou...
-
-.. code:: shell
-
-    $ pip-sync
-
-Para garantir que somente as dependencias listadas no requirements fiquem
-instaladas.
-
-Leia mais sobre o pip-tools_.
-
 ********
 12factor
 ********
@@ -134,5 +104,4 @@ Iniciando Servidores
 
     $ docker-compose up
 
-.. _pip-tools: https://koed00.github.io/managed-environments-with-piptools/
 .. _12factor: http://12factor.net/
