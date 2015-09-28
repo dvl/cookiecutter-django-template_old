@@ -135,9 +135,6 @@ STATICFILES_FINDERS = (
 )
 
 COMPRESS_PRECOMPILERS = (
-    # ('text/coffeescript', 'coffee --compile --stdio'),
-    # ('text/less', 'lessc --include-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),  # fuck...
-    ('text/x-sass', 'sass --load-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),
     ('text/x-scss', 'sass --scss --load-path=%s {infile} {outfile}' % STATICFILES_DIRS[1]),
 )
 
