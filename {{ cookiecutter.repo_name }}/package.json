@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "bower": "^1.4.1",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "node-sass": "^3.3.3"
   },
   "devDependencies": {},
   "scripts": {
