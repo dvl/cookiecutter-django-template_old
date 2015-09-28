@@ -19,8 +19,8 @@
   {% endcompress %}
 
   {% compress css %}
-    <link rel="stylesheet" type="text/x-sass" href="{% static 'sass/site.sass' %}">
-    <link rel="stylesheet" type="text/x-sass" href="{% static 'sass/print.sass' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/site.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/print.scss' %}">
   {% endcompress %}
 
   {% block extra_css %}{% endblock %}
