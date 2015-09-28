@@ -8,7 +8,7 @@ install:
     @docker-compose stop
 
 build:
-    @@docker-compose build
+    @docker-compose build
 
 up:
     @docker-compose up
