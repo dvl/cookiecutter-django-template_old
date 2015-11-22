@@ -87,7 +87,7 @@ memcached:
 {% endif %}
 
 {% if cookiecutter.use_celery == 'y' and cookiecutter.use_celery_with_redis == 'y' %}
-memcached:
+redis:
   image: redis
   ports:
     - "6379:6379"
