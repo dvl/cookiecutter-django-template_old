@@ -79,7 +79,7 @@ memcached:
 {% endif %}
 
 {% if cookiecutter.use_celery == 'y' and cookiecutter.use_celery_with_rabbitmq == 'y' %}
-memcached:
+rabbitmq:
   image: rabbitmq
   ports:
     - "5672:5672"
