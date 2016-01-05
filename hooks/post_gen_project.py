@@ -28,6 +28,7 @@ use_docker = '{{ cookiecutter.use_docker }}' == 'y'
 use_heroku = '{{ cookiecutter.use_heroku }}' == 'y'
 use_bcrypt = '{{ cookiecutter.use_bcrypt }}' == 'y'
 use_newrelic = '{{ cookiecutter.use_newrelic }}' == 'y'
+use_jade = '{{ cookiecutter.use_jade }}' == 'y'
 
 if not use_heroku:
     os.remove('.buildpacks')
