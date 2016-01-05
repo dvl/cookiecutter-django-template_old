@@ -10,7 +10,7 @@ em diversos projetos.
 Conteudo
 ********
 
-* Django 1.8
+* Django 1.9
 * ``django-debug-toolbar`` e ``django-extensions`` porque todo projeto
   deveria usar isso.
 * ``django-flat-theme`` pois possivelmente será padrão em uma futura versão
@@ -30,6 +30,7 @@ Conteudo
 * ``Makefile`` para facilitar com testes e ``coverage`` para relatórios de
   cobertura.
 * ``bcrypt`` no lugar do ``pbkdf2``.
+* Suporte a templates usando Jade via ``pyjade``.
 
 *************************
 Iniciando um novo projeto
