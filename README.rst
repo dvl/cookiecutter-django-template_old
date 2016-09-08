@@ -21,7 +21,7 @@ Conteudo
 * Página de login e troca de senha customizadas baseada no ``contrib.auth``
   (então talves as pessoas parem de reinventar a roda).
 * ``bower`` e ``django-compressor`` para lidar com arquivos estaticos.
-* ``django-crispy-forms`` e ``django-floopyforms`` pois lidar com form no
+* ``django-crispy-forms`` e ``django-floppyforms`` pois lidar com form no
   Django por padrão é horrivel.
 * ``Procfile``, ``whitenoise``, ``waitress-server`` para deploy facil no
   Heroku.
